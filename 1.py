@@ -15,4 +15,4 @@ matem.minus(5,3)
 matem.umnojenie(5,3)
 matem.delenie(5,3)
 matem.stepen(5,3)
-
+ 
