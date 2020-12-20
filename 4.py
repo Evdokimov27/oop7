@@ -1,55 +1,59 @@
 import random
-class mas:
-    def mass(self):
-        a.mass()
-    def clear(self):
-        a.clear()
-    def sort(self):
-        a.sort()
-    def delete(self):
-        a.pop(3)
-    def remove(self, x):
-        a.remove(x)
-
-
-
-m = mas()
 a = []
-n = int(input())
-for b in range(n):
-    a.append(random.randrange(1, 20))
-print(a, "Массив размерностью", n)
-x = int(input())
-
-if  x == 1:
-    c = []
-    n = int(input())
-    for b in range(n):
-        c.append(random.randrange(1, 20))
-    print(c)
-    
-elif x == 2:
-    m.clear()
-    print(a, "Массив отчищен")
-
-elif x == 4:
-    for c in range(len(a) - 1):
-        for d in range(len(a) - 1):
-            if a[d] < a[d + 1]:
-                a[d], a[d + 1] = a[d + 1], a[d]
-    print(a, "Сортировка по убыванию")
-    for c in range(len(a) - 1):
-        for d in range(len(a) - 1):
-            if a[d] > a[d + 1]:
-                a[d], a[d + 1] = a[d + 1], a[d]
-    m.sort()
-    print(a, "Сортировка по возрастанию")
-
-elif x == 3:
-    m.delete()
-    print(a, "Элемент удален")
-
-elif x == 5:
-    i = int(input('Число, которое нужно убрать - '))
-    m.remove(i)
-    print(a)
+n = 0
+class massiv:
+    n = 0
+    def zap (self):
+        if self.n == 0:
+            g = int(input("Размерность массива - "))
+            for i in range (g):
+                a.append(random.randrange(1,10))
+            self.n += 1
+            print(a)
+        else:
+            print("Массив уже заполнен")
+    def clear (self):
+        if self.n != 0:
+            a.clear()
+            print("Массив отчищен")
+            print(a)
+            self.n -= 1
+        else: 
+            print("Массив уже отчищен")
+    def pop (self):
+        if self.n != 0:
+            j = int(input("Индексы элемента - "))
+            a.pop(j)
+            print(a)
+        else:
+            print("Сначала нужно заполнить массив")
+    def sort (self):
+        u = int(input("1. По возрастанию, 2.По убыванию - "))
+        if u == 1:
+            for j in range (len(a)-1):
+                for o in range (len(a)-1):
+                    if a[o] > a [o+1]:
+                        a[o], a[o+1] = a[o+1], a[o]
+        if u == 2:
+            for j in range (len(a)-1):
+                for o in range (len(a)-1):
+                    if a[o] < a [o+1]:
+                        a[o+1], a[o] = a[o], a[o+1]
+            print(a)
+    def delete (self):
+        v = int(input("Введите элемент - "))
+        a.remove(v)
+        print(a)
+y = massiv()
+while True:
+    k = int(input("1.Заполнить, 2.Отчистить, 3.Удалить, 4.Сортировка, 5.Удалить - "))
+    if k == 1:
+        y.zap()
+    if k == 2:
+        y.clear()
+    if k == 3:
+        y.pop()
+    if k == 4:
+        y.sort()
+    if k == 5:
+        y.delete()
